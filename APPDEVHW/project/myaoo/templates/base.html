@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        @font-face { font-family: Videophreak; src: url({% static 'VIDEOPHREAK.TTF' %}); }
+        h1 {
+                font-family: Videophreak;
+                color: #ffffff;
+             }
+        li {
+                font-family: Videophreak;
+                color: #ffffff;
+             }
+       a {
+           font-family: Videophreak;
+           color: #ffffff;
+       }	  
+       a:hover {
+           font-family: Videophreak;
+           color: hotpink;
+       }
+       body {
+           background-image: url({% static 'retrowave_80_s_bg_by_rafael_de_jongh-d9wsq5j.png' %});
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-position: center; 
+       }
+       nav{
+        color: #ffffff;
+       }
+       .color-me{
+        color:orange;
+        a:hover {
+           font-family: Videophreak;
+           color: hotpink;
+       }
+       }
+       
+         </style> 
+    <title>
+      {% block title %}
+        Django App
+      {% endblock %}
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
+  </head>
+  <body><center>
+    <font size="5"><a style="color: orange;" href="{% url 'home' %}">\\ Home //</a> 
+        <a style="color: orange;" href="{% url 'contacts' %}">\\ Contacts //</a> 
+        <img src="{% static '32295-6-space-invaders-transparent-background.png' %}" height="5%" width="5%">
+        <a style="color: orange;" href="{% url 'aboutus' %}"> \\ About Us //</a>
+         <a style="color: orange;" href="{% url 'todos' %}"> \\ ToDo List //</a><br>
+    </center>
+    <br>
+        <div class="container">{% block content %} {% endblock %}</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
+  </body>
+</html>
